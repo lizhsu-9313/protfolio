@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>徐佳瑛 | 專業設計作品集</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide Icons 庫 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@1,400..900&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #eaeaef; 
+            color: #1f2937; /* 深灰文字 (gray-800) */
+        }
+        /* 定義重點色*/
+        .accent-color {
+            color: #2a4e76;
+        }
+        .accent-bg {
+            background-color: #2a4e76;
+        }
+        /* 網格系統佈局的內容區塊 - 調整為更寬的版面 (max-w-6xl) */
+        .content-section {
+            max-width: 1400px; /* 更寬的內容區 */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5rem 2rem; /* 更多留白 */
+        }
+        /* 模擬手寫/設計感字體 for Footer */
+        .handwritten-style {
+            font-family: 'Playfair Display', serif; /* 使用襯線字體並設為斜體模擬筆刷感 */
+        }
+        
+        /* 隱藏滾動條 */
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        #modal-image {
+            width: 100%;
+            height: auto; /* 允許圖片根據內容調整高度 */
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 1. 導覽列 (Navigation Bar) -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+        <nav class="content-section py-4 flex justify-between items-center px-4 sm:px-6 lg:px-8">
+            <!-- LOGO / 個人資訊 -->
+            <a href="#hero" class="text-2xl font-black tracking-widest text-gray-900 hover:accent-color transition duration-300">
+                LIZ DESIGN
+            </a>
+
+            <!-- 桌面版導覽連結 -->
+            <div class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#about" class="text-gray-600 hover:accent-color transition duration-300">關於我</a>
+                <a href="#portfolio" class="text-gray-600 hover:accent-color transition duration-300">作品集</a>
+                <a href="#contact" class="text-gray-600 hover:accent-color transition duration-300">聯繫</a>
+            </div>
+
+            <!-- 社群媒體連結 (桌面版) -->
+            <div class="hidden md:flex space-x-4">
+                <a href="#" target="_blank" aria-label="LinkedIn" class="text-gray-600 hover:accent-color transition duration-300">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Dribbble" class="text-gray-600 hover:accent-color transition duration-300">
+                    <i data-lucide="dribbble" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <!-- 手機版選單按鈕 -->
+            <button id="menu-toggle" class="md:hidden text-gray-600 hover:accent-color p-2 rounded-md transition duration-300" aria-label="Open Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+
+        <!-- 手機版下拉選單 (預設隱藏) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
+            <div class="px-4 pt-2 pb-3 space-y-2 sm:px-6 text-center">
+                <a href="#about" class="block text-gray-600 hover:accent-color transition duration-300 py-2" onclick="closeMobileMenu()">關於我</a>
+                <a href="#portfolio" class="block text-gray-600 hover:accent-color transition duration-300 py-2" onclick="closeMobileMenu()">作品集</a>
+                <a href="#contact" class="block text-gray-600 hover:accent-color transition duration-300 py-2" onclick="closeMobileMenu()">聯繫</a>
+                <div class="flex justify-center space-x-6 pt-4 border-t border-gray-200 mt-2">
+                    <a href="#" target="_blank" aria-label="LinkedIn" class="text-gray-600 hover:accent-color transition duration-300">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Dribbble" class="text-gray-600 hover:accent-color transition duration-300">
+                        <i data-lucide="dribbble" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    
+    <section id="hero" class="content-section min-h-[85vh] flex flex-col items-center justify-center text-center relative overflow-hidden">
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] max-w-[1200px] h-full pointer-events-none opacity-10">
+            <h2 class="text-[12rem] sm:text-[18rem] md:text-[24rem] font-black text-blue-200/50 leading-none tracking-widest uppercase select-none">DESIGN</h2>
+        </div>
+
+        <div class="relative z-10 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[650px] lg:h-[650px] mb-12"> 
+
+            <div class="absolute inset-0 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+                <img src="img/logo-04.jpg" alt="視覺主體照片" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tighter text-gray-900 leading-tight z-10 mb-4">
+            <span class="accent-color">LIZ</span> HSU / 徐佳瑛
+        </h1>
+
+        <!-- 標語/介紹 (移到下方) -->
+        <p class="text-lg sm:text-xl text-gray-700 border-y border-gray-400 py-1 px-4 inline-block font-medium z-10 mb-8">
+            設計師
+        </p>
+        
+    </section>
+
+
+    <!-- 3. 關於我 (About Me Section) -->
+    <section id="about" class="content-section bg-gray-50 border-y border-gray-100">
+        <h2 class="text-4xl font-bold mb-16 text-center text-gray-900">ABOUT / 關於我</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+            <!-- 個人簡介與設計理念 -->
+            <div class="lg:col-span-2">
+                <h3 class="text-3xl font-bold mb-6 text-gray-900">設計理念與專業背景</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                    我是一位專注平面傳達設計、產品與包裝設計以及商業視覺攝影的設計師。
+                </p>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    我的工作核心是將複雜的概念轉化為直覺、簡潔的數位產品。從品牌識別、資訊架構規劃到最終的視覺呈現，我熱衷於每一個創造過程，確保每一個像素和互動都服務於最終的商業目標和用戶需求。
+                </p>
+            </div>
+
+            <!-- 專業技能 -->
+            <div class="lg:col-span-1">
+                <h3 class="text-2xl font-semibold mb-6 accent-color border-b border-indigo-200 pb-2">專業技能</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-3 text-gray-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 accent-color"></i>
+                        <span>Photoshop</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-gray-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 accent-color"></i>
+                        <span>Illustrator</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-gray-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 accent-color"></i>
+                        <span>AfterEffect</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-gray-800">
+                        <i data-lucide="check-circle" class="w-5 h-5 accent-color"></i>
+                        <span>Blender</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 工作經驗 (置於底部，類似時間軸) -->
+        <div class="mt-20">
+             <h3 class="text-2xl font-semibold mb-6 accent-color border-b border-indigo-200 pb-2">相關工作經驗</h3>
+             <ul class="space-y-6 text-gray-600">
+                <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                    <div>
+                        <p class="font-bold text-gray-900"> </p>
+                        <p> </p>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 min-w-[100px] text-right"> </span>
+                </li>
+                <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                    <div>
+                        <p class="font-bold text-gray-900"> </p>
+                        <p> </p>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500 min-w-[100px] text-right"> </span>
+                </li>
+             </ul>
+        </div>
+    </section>
+
+
+    <!-- 4. 作品集一覽 (Portfolio Grid Section) - 模擬範例圖的簡潔卡片 -->
+    <section id="portfolio" class="content-section">
+        <h2 class="text-4xl font-bold mb-16 text-center text-gray-900">PORTFOLIO / 精選作品集</h2>
+
+        <!-- 作品集網格 - 調整為三欄，並移除圓角和說明區塊 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 作品卡片 1 -->
+            <div class="group relative overflow-hidden shadow-md border border-gray-200 cursor-pointer hover:shadow-xl transition duration-300" data-title="專案一：心之谷海報再設計" data-category="平面傳達設計">
+                <img src="img/電影海報.jpg" alt="作品一預覽圖" class="w-full h-auto object-cover aspect-[3/4] group-hover:opacity-90 transition duration-300" loading="lazy">
+            </div>
+
+            <!-- 作品卡片 2 -->
+            <div class="group relative overflow-hidden shadow-md border border-gray-200 cursor-pointer hover:shadow-xl transition duration-300" data-title="專案二：透明杯具攝影" data-category="商業視覺攝影">
+                <img src="img/杯具攝影1.jpg" alt="作品二預覽圖" class="w-full h-auto object-cover aspect-[3/4] group-hover:opacity-90 transition duration-300" loading="lazy">
+            </div>
+
+            <!-- 作品卡片 3 -->
+            <div class="group relative overflow-hidden shadow-md border border-gray-200 cursor-pointer hover:shadow-xl transition duration-300" data-title="專案三：酒水產品包裝設計" data-category="產品包裝設計">
+                <img src="img/阿婆的梅酒.jpg" alt="作品三預覽圖" class="w-full h-auto object-cover aspect-[3/4] group-hover:opacity-90 transition duration-300" loading="lazy">
+            </div>
+
+            <!-- 作品卡片 4 -->
+            <div class="group relative overflow-hidden shadow-md border border-gray-200 cursor-pointer hover:shadow-xl transition duration-300" data-title="專案四：個人LOGO設計" data-category="平面傳達設計">
+                <img src="img/logo-04.jpg" alt="作品四預覽圖" class="w-full h-auto object-cover aspect-[3/4] group-hover:opacity-90 transition duration-300" loading="lazy">
+            </div>
+
+             <!-- 作品卡片 5 -->
+            <div class="group relative overflow-hidden shadow-md border border-gray-200 cursor-pointer hover:shadow-xl transition duration-300" data-title="專案五：慶生的蘋果" data-category="商業視覺攝影">
+                <img src="img/慶生的蘋果.jpg" alt="作品五預覽圖" class="w-full h-auto object-cover aspect-[3/4] group-hover:opacity-90 transition duration-300" loading="lazy">
+            </div>
+
+             <!-- 作品卡片 6 -->
+            <div class="group relative overflow-hidden shadow-md border border-gray-200 cursor-pointer hover:shadow-xl transition duration-300" data-title="專案六：豆寶划端午．三味賀時節" data-category="產品包裝設計">
+                <img src="img/豆寶划端午 三味賀時節.jpg" alt="作品六預覽圖" class="w-full h-auto object-cover aspect-[3/4] group-hover:opacity-90 transition duration-300" loading="lazy">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. 作品細節 (Modal for Portfolio Detail) -->
+    <div id="portfolio-modal" class="fixed inset-0 z-[100] bg-black/70 hidden items-center justify-center p-4 transition-opacity duration-300 ease-in-out" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl shadow-3xl transform scale-95 transition-transform duration-300">
+            <!-- 關閉按鈕 -->
+            <button id="modal-close" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 transition duration-300 p-2 z-10 bg-white/50 rounded-full" aria-label="Close modal">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+
+            <!-- 模態內容 -->
+            <div class="p-6 sm:p-10">
+                <h3 id="modal-title" class="text-3xl font-bold mb-2 text-gray-900"></h3>
+                <p id="modal-category" class="text-lg accent-color mb-6"></p>
+
+                <!-- 作品圖 (已修復圖片來源，確保能在 Canvas 中顯示) -->
+                <img id="modal-image" src="https://placehold.co/800x600/f3f4f6/4f46e5?text=Project+Detail+Image" alt="作品詳細圖片" class="w-full h-auto object-contain rounded-lg mb-8 shadow-md border border-gray-100">
+
+                <!-- 詳細描述 -->
+                <div id="modal-description" class="space-y-6 text-gray-600">
+                    <!-- 內容將由 JavaScript 動態插入 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. 聯繫方式 (Contact Section) -->
+    <section id="contact" class="content-section bg-gray-50 border-t border-gray-100">
+        <h2 class="text-4xl font-bold mb-16 text-center text-gray-900">CONTACT / 與我聯繫</h2>
+        <div class="flex flex-col lg:flex-row gap-16 max-w-4xl mx-auto">
+            
+            <!-- 聯繫資訊 -->
+            <div class="lg:w-1/2 space-y-6">
+                <p class="text-gray-600 text-lg">
+                    如果您對我的作品感興趣，或是有任何合作機會，請隨時透過以下方式與我聯繫。我期待您的來信！
+                </p>
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="mail" class="w-6 h-6 accent-color"></i>
+                        <a href="mailto:your.email@example.com" class="text-gray-900 hover:accent-color">liiizzz9313@gmail.com</a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="phone" class="w-6 h-6 accent-color"></i>
+                        <span class="text-gray-900">+886 966 350 530</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="map-pin" class="w-6 h-6 accent-color"></i>
+                        <span class="text-gray-900">台灣 台北/高雄 (可遠端/駐點)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 簡單聯繫表單 -->
+            <div class="lg:w-1/2 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <form class="space-y-5">
+                    <input type="text" placeholder="您的姓名" class="w-full p-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-gray-800" required>
+                    <input type="email" placeholder="您的電子郵件" class="w-full p-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-gray-800" required>
+                    <textarea placeholder="您的訊息或需求" rows="4" class="w-full p-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-gray-800" required></textarea>
+                    <button type="submit" class="w-full accent-bg text-white font-semibold py-3 rounded-full hover:bg-indigo-700 transition duration-300 shadow-lg hover:shadow-indigo-500/50 uppercase tracking-wider">
+                        送出訊息
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 7. 頁尾 (Footer) - 調整為深色背景與多欄佈局，模擬範例圖 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="content-section flex flex-col gap-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                
+                <!-- 欄位 1: 品牌資訊與手寫簽名 -->
+                <div class="col-span-2 md:col-span-1">
+                    <h4 class="text-xl font-bold mb-4 tracking-widest text-white">LIZ DESIGN</h4>
+                    <p class="text-gray-400 text-sm mb-4">用設計解決問題，創造持久的價值。</p>
+                    
+                    <!-- 模擬手寫感謝語 -->
+                    <h5 class="handwritten-style text-4xl italic text-indigo-400 mt-8 leading-none">
+                        Thank You
+                    </h5>
+                    <p class="handwritten-style text-lg text-indigo-300">
+                        Liz Hsu
+                    </p>
+                </div>
+
+                <!-- 欄位 2: 快速連結 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">快速連結</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#hero" class="hover:accent-color transition duration-300">首頁</a></li>
+                        <li><a href="#about" class="hover:accent-color transition duration-300">關於我</a></li>
+                        <li><a href="#portfolio" class="hover:accent-color transition duration-300">作品集</a></li>
+                    </ul>
+                </div>
+
+                <!-- 欄位 3: 專業技能類別 (模擬產品類別) -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">服務範圍</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:accent-color transition duration-300">平面傳達設計</a></li>
+                        <li><a href="#" class="hover:accent-color transition duration-300">產品包裝設計</a></li>
+                    </ul>
+                </div>
+
+                <!-- 欄位 4: 聯繫與社群 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">保持聯繫</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:accent-color transition duration-300">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" target="_blank" aria-label="Instagram" class="text-gray-400 hover:accent-color transition duration-300">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" target="_blank" aria-label="Mail" class="text-gray-400 hover:accent-color transition duration-300">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    <!-- 模擬電子報訂閱 -->
+                    <input type="email" placeholder="輸入您的 Email" class="w-full p-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-white text-sm">
+                    <button class="w-full accent-bg text-white font-semibold py-2 rounded-lg mt-2 text-sm hover:opacity-90">訂閱</button>
+                </div>
+            </div>
+
+            <!-- 著作權宣告 (Footer Bottom) -->
+            <div class="border-t border-gray-800 pt-6 mt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2025 WANG. MING. All Rights Reserved. | Designed with love and Tailwind CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // 初始化 Lucide Icons
+        lucide.createIcons();
+
+        // 導覽列 (Mobile Menu) 邏輯
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+             mobileMenu.classList.add('hidden');
+        }
+
+        menuToggle.addEventListener('click', toggleMobileMenu);
+
+
+        // 作品集模態視窗 (Portfolio Modal) 邏輯
+        const modal = document.getElementById('portfolio-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCategory = document.getElementById('modal-category');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description'); // 新增: 取得描述區塊
+        const modalClose = document.getElementById('modal-close');
+        const portfolioItems = document.querySelectorAll('#portfolio .group');
+
+        // 打開模態視窗
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // 獲取作品資料
+                const title = item.getAttribute('data-title');
+                const category = item.getAttribute('data-category');
+                // 獲取 Modal 圖片來源
+                const detailImage = item.getAttribute('data-image');
+                // 新增: 獲取詳細描述內容
+                const description = item.getAttribute('data-description');
+                
+                // 更新模態內容
+                modalTitle.textContent = title;
+                modalCategory.textContent = category;
+                
+                // 設置圖片來源 (使用 data-image 模擬不同比例)
+                modalImage.src = detailImage;
+
+                // 核心修改: 使用 innerHTML 將帶有 HTML 標籤的描述內容注入
+                modalDescription.innerHTML = description;
+
+                // 顯示模態視窗
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden'; // 禁用背景滾動
+            });
+        });
+
+        // 關閉模態視窗
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = ''; // 恢復背景滾動
+        }
+
+        modalClose.addEventListener('click', closeModal);
+
+        // 點擊模態視窗背景關閉
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // 鍵盤 Esc 鍵關閉
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+    </script>
+</body>
+</html>
